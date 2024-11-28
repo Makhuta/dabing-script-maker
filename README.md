@@ -16,6 +16,8 @@
 \characterLine{\postava{ALIAS}}{TIME}{CHARACTERS_LINE}
 ```
 where the values means this:
-ALIAS &rarr; the defined alias in `postavy.tex` file
-TIME &rarr; the timestamp in the episode/movie (can be empty)
-CHARACTERS_LINE &rarr; the line that is being said by the mentioned character
+| Value | Desctiption |
+| - | - |
+| ALIAS | the defined alias in `postavy.tex` file |
+| TIME | the timestamp in the episode/movie (can be empty) |
+| CHARACTERS_LINE | the line that is being said by the mentioned character |
