@@ -3,11 +3,11 @@
 ## How to use
 
 - in `postavy.tex` is dictionary of characters used in script using this structure
-```json
+```python
 {
     "alias": {
         "name": "Character Full Name",
-        "constant": True                // default False, used to differentiate between characters that are constant or not on the front page
+        "constant": True                # default False, used to differentiate between characters that are constant or not on the front page
     }
 }
 ```
