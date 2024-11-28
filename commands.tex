@@ -1,0 +1,34 @@
+\newcommand{\characterLine}[3]{%
+    \begin{tblr}{ X[3,r] X[1,c] X[9,l] }
+        \textbf{#1} & \underline{\textit{#2}} & #3 \\ % Render character name and type
+    \end{tblr}
+}
+
+\newcommand{\newpart}{%
+    \noindent\makebox[\linewidth]{\rule{\maxdimen}{0.2pt}} \\[5mm]
+}
+
+\newcommand{\nameformat}[3]{%
+    \textcolor[HTML]{#3}{\colorbox[HTML]{#2}{#1}}
+}
+
+
+\begin{pycode}
+def get_character(a):
+    colorId = 0
+    for alias, character in characters.items():
+        if alias == a:
+            name = character.get("name", "Unknown")
+            return f'\\nameformat{{{name}}}{{{colors[colorId][1]}}}{{{colors[colorId][0]}}}'
+            break
+
+        colorId += 1
+    else:
+        return f'\\nameformat{{UNKNOWN}}{{{colors[0][1]}}}{{{colors[0][0]}}}'
+\end{pycode}
+
+\newcommand{\postava}[1]{
+    \pyc{%
+    print(get_character("#1"))
+    }
+}

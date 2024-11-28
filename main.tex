@@ -1,0 +1,37 @@
+\documentclass[twoside, a4paper, 10pt]{article}
+
+\usepackage[czech]{babel}
+\usepackage{booktabs}
+\usepackage[czech=quotes]{csquotes}
+\usepackage[top=3cm,bottom=3.5cm,left=2cm,right=3cm,asymmetric]{geometry}
+\usepackage[hidelinks, hypertexnames=false]{hyperref}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{pgffor}
+\usepackage[x11names]{xcolor}
+\usepackage{tabularray}
+\usepackage{xparse}
+\usepackage{expl3}
+\usepackage{ifthen}
+\usepackage{etoolbox}
+\usepackage{xstring}
+\usepackage{pythontex}
+
+\input{colors}
+\input{postavy}
+\input{commands}
+
+
+\begin{document}
+\input{front_page}
+
+
+\maketitle
+\thispagestyle{empty}
+\input{postavy_list}
+
+\newpage
+
+\include{script}
+
+\end{document}

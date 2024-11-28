@@ -1,0 +1,31 @@
+\begin{pycode}
+print(f'\\begin{{center}}')
+print(f'\\vspace{{1in}}')
+print(f'\\textbf{{\\LARGE{{Postavy:}}}} \\bigbreak')
+colorId = 0
+has_vedlejsi = False
+print(f'\\textbf{{\\large{{Stálé:}}}} \\break')
+for alias, character in characters.items():
+    name = character.get("name")
+    constant = character.get("constant", False)
+    if constant:
+        color = colors[colorId]
+        print(f'\\nameformat{{{name}}}{{{color[1]}}}{{{color[0]}}} \\break')
+    else:
+        has_vedlejsi = True
+    colorId += 1
+
+
+colorId = 0
+if has_vedlejsi:
+    print(f'\\break \\textbf{{\\large{{Vedlejší:}}}} \\break')
+for alias, character in characters.items():
+    name = character.get("name")
+    constant = character.get("constant", False)
+    if not constant:
+        color = colors[colorId]
+        print(f'\\nameformat{{{name}}}{{{color[1]}}}{{{color[0]}}} \\break')
+    colorId += 1
+
+print(f'\\end{{center}}')
+\end{pycode}
