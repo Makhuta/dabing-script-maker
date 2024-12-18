@@ -10,12 +10,15 @@
 \usepackage{pgffor}
 \usepackage[x11names]{xcolor}
 \usepackage{tabularray}
+\usepackage{array}
 \usepackage{xparse}
 \usepackage{expl3}
 \usepackage{ifthen}
 \usepackage{etoolbox}
 \usepackage{xstring}
 \usepackage{pythontex}
+\usepackage{longtable}
+\usepackage{ltablex,booktabs}
 
 \input{colors}
 \input{postavy}
@@ -25,6 +28,16 @@
 \begin{document}
 \input{front_page}
 
+\def\mytitle{%
+    \myanime\ - S\myserie E\myepisode\ - \myepisodename
+    \ifx\mytimes\empty
+    \else
+        \space\mytimes
+    \fi
+}
+\title{\Large{\mytitle}}
+\author{\myauthor}
+\date{\today}
 
 \maketitle
 \thispagestyle{empty}
@@ -32,6 +45,13 @@
 
 \newpage
 
-\include{script}
+\setcounter{page}{1}
 
+\begin{tabularx}{\textwidth}{rcX}
+    && \\
+    
+    \input{script}
+    
+\end{tabularx}
+    
 \end{document}
