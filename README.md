@@ -13,7 +13,7 @@
 ```
 - the script have to be put in `script.tex` using this format:
 ```tex
-\characterLine{\postava{ALIAS}}{TIME}{CHARACTERS_LINE}
+\characterLine{ALIAS}{TIME}{CHARACTERS_LINE}
 ```
 where the values means this:
 | Value | Desctiption |
