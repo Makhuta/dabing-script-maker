@@ -17,7 +17,7 @@ def get_character(a):
     colorId = 0
     for alias, character in characters.items():
         if alias == a:
-            name = character.get("name", "Unknown")
+            name = character.get("name", "Unknown").replace("&", "\&")
             return f'\\nameformat{{{name}}}{{{colors[colorId][1]}}}{{{colors[colorId][0]}}}'
             break
 

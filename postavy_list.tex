@@ -6,8 +6,11 @@ colorId = 0
 has_vedlejsi = False
 print(f'\\textbf{{\\large{{Stálé:}}}} \\break')
 for alias, character in characters.items():
-    name = character.get("name")
+    name = character.get("name").replace("&", "\&")
     constant = character.get("constant", False)
+    skip = character.get("skip", False)
+    if skip:
+        continue
     if constant:
         color = colors[colorId]
         print(f'\\nameformat{{{name}}}{{{color[1]}}}{{{color[0]}}} \\break')
@@ -20,8 +23,11 @@ colorId = 0
 if has_vedlejsi:
     print(f'\\break \\textbf{{\\large{{Vedlejší:}}}} \\break')
 for alias, character in characters.items():
-    name = character.get("name")
+    name = character.get("name").replace("&", "\&")
     constant = character.get("constant", False)
+    skip = character.get("skip", False)
+    if skip:
+        continue
     if not constant:
         color = colors[colorId]
         print(f'\\nameformat{{{name}}}{{{color[1]}}}{{{color[0]}}} \\break')
