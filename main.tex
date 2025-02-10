@@ -6,6 +6,7 @@
 \usepackage[top=3cm,bottom=3.5cm,left=2cm,right=3cm,asymmetric]{geometry}
 \usepackage[hidelinks, hypertexnames=false]{hyperref}
 \usepackage{graphicx}
+\usepackage{epstopdf}
 \usepackage{enumitem}
 \usepackage{pgffor}
 \usepackage[x11names]{xcolor}
@@ -34,8 +35,9 @@
     \else
         \space(\mytimes)
     \fi
+    \vspace{10px}
 }
-\title{\Large{\mytitle}}
+\title{\Large{\mytitle}\\ \includegraphics[scale=0.5]{imgs/logo.png}}
 \author{\myauthor}
 \date{\today}
 
@@ -48,7 +50,6 @@
 \setcounter{page}{1}
 
 \begin{tabularx}{\textwidth}{rcX}
-    && \\
     
     \input{script}
     
