@@ -30,7 +30,19 @@
 \input{front_page}
 
 \def\mytitle{%
-    \myanime\ - S\myserie E\myepisode\ - \myepisodename
+    \myanime\ - 
+    \ifx\myserie\empty
+    \ifx\myepisode\empty
+    \else
+    Episode \myepisode\ - 
+    \fi
+    \else
+    \ifx\myepisode\empty
+    \else
+    S\myserie E\myepisode\ - 
+    \fi
+    \fi
+    \myepisodename
     \ifx\mytimes\empty
     \else
         \space(\mytimes)
